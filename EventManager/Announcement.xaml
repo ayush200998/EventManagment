@@ -8,7 +8,22 @@
         Title="Window1" Height="1000" Width="1500">
     <Grid>
         <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Notifications" HorizontalAlignment="Left" Margin="611,203,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="196" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Announcement Board" HorizontalAlignment="Left" Margin="469,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <ListBox x:Name="listBoxValue" HorizontalAlignment="Left" Height="507" Margin="198,292,0,0" VerticalAlignment="Top" Width="1091"/>
+        <Path x:Name="rightArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="1337.387,484.902,77.251,404.081" RenderTransformOrigin="1.445,1.327" />
+        <Path x:Name="leftArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="-74.847,354.051,1489.485,534.932" RenderTransformOrigin="1.445,1.327" >
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180.161"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Label Content="Announcement Board" HorizontalAlignment="Left" Margin="495,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="372" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
+
+
 
     </Grid>
 </Window>

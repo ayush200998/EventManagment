@@ -1,4 +1,4 @@
-﻿<Window x:Class="EventManager.Window1"
+﻿<Window x:Class="EventManager.AnnouncementWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="Window1" Height="720" Width="1280">
 	<Grid>
-		<Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,59,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
+		<Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,59,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
+		<Button x:Name="prevButton" Margin="10,324,1189,224" Click="Button_Click">
+			<Path Fill="Black" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
+		</Button>
+		<Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="Button_Click_1">
+			<Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
+		</Button>
 		<Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
 		<ListBox x:Name="listBoxValue" HorizontalAlignment="Left" Height="416" Margin="88,212,0,0" VerticalAlignment="Top" Width="1100"/>
 		<Path x:Name="rightArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="1337.387,484.902,77.251,404.081" RenderTransformOrigin="1.445,1.327" />
@@ -21,7 +27,7 @@
 				</TransformGroup>
 			</Path.RenderTransform>
 		</Path>
-		<Label Content="Notification Title" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="372" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
+		<Label Content="Notification Title" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="1100" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
 
 
 

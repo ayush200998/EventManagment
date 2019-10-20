@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
         Title="Window2" Height="720" Width="1280">
-    <Grid>
-        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Heading :" HorizontalAlignment="Left" Margin="88,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock x:Name="headingValue" HorizontalAlignment="Left" Margin="240,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="77" Width="822" Background="#FFFAFAFA"/>
-        <TextBlock x:Name="descriptionValue" HorizontalAlignment="Left" Margin="200,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="376" Width="822" Background="#FFFAFAFA"/>
-        <Label Content="Details" HorizontalAlignment="Left" Margin="485,300,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
-        <Button x:Name="nextButton" Content="Next" HorizontalAlignment="Left" Margin="919,781,0,0" VerticalAlignment="Top" Width="103" Height="33" FontSize="20" FontWeight="Bold"/>
+	<Grid>
+		<Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1061,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
+		<Label Content="Heading :" HorizontalAlignment="Left" Margin="64,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
+		<TextBlock x:Name="headingValue" HorizontalAlignment="Left" Margin="240,0,0,470" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" Width="900" Background="#FFFAFAFA"/>
+		<TextBlock x:Name="descriptionValue" HorizontalAlignment="Left" Margin="240,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="364" Width="900" Background="#FFFAFAFA"/>
+		<Label Content="Details" HorizontalAlignment="Left" Margin="88,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
+		<Button x:Name="nextButton" Content="Next" HorizontalAlignment="Left" Margin="919,781,0,0" VerticalAlignment="Top" Width="103" Height="33" FontSize="20" FontWeight="Bold"/>
 
-    </Grid>
+	</Grid>
 </Window>

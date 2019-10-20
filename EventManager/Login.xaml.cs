@@ -24,5 +24,58 @@ namespace EventManager
         {
             InitializeComponent();
         }
+
+        bool isTeacher = false;
+        bool isStudent = false;
+
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            loginButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
+
+            if (!(isTeacher || isStudent))
+            {
+                exceptionLabel.Content = "**Student/Teacher Button NOT Selected**";
+            }
+            else
+            {
+
+            }
+            /*if(isTeacher&&isStudent)
+                exceptionLabel.Content = "**Student/Teacher Button NOT Selected**";*/
+        }
+
+        private void teacherButton_Click(object sender, RoutedEventArgs e)
+        {
+            isTeacher = !isTeacher;
+            isStudent = false;
+
+            if (isTeacher)
+            {
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+            }
+            else
+            {
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+            }
+        }
+
+        private void studentButton_Click(object sender, RoutedEventArgs e)
+        {
+            isTeacher = false;
+            isStudent = !isStudent;
+
+            if (isStudent)
+            {
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
+            }
+            else
+            {
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+            }
+        }
     }
 }

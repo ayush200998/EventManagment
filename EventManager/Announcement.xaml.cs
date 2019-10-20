@@ -17,11 +17,26 @@ namespace EventManager
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class AnnouncementWindow : Window
     {
-        public Window1()
+        public AnnouncementWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void switchButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

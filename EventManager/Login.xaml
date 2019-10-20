@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1500">
+        Title="MainWindow" Height="720" Width="1280">
     <Grid Margin="0,2,-6.4,-19.6" Background="#FFBDF3DD">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>

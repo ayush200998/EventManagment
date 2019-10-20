@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
-        Title="Window2" Height="1000" Width="1200">
+        Title="Window2" Height="720" Width="1280">
     <Grid>
         <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
         <Label Content="Heading :" HorizontalAlignment="Left" Margin="88,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>

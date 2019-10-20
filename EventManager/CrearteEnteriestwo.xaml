@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
-        Title="CrearteEnteriestwo" Height="1000" Width="1200">
+        Title="CrearteEnteriestwo" Height="720" Width="1280">
     <Grid>
         <Label Content="Create Entry " HorizontalAlignment="Left" Margin="433,36,0,0" VerticalAlignment="Top" Height="76" Width="293" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
         <Label Content="Branch :" HorizontalAlignment="Left" Margin="142,139,0,0" VerticalAlignment="Top" Height="55" Width="138" FontSize="36"/>

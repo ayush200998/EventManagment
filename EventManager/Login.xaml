@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
-	<Grid Margin="0,0,-6,-20" Background="#FFE6FFFF" Height="707" VerticalAlignment="Bottom">
+        Title="MainWindow" Height="720" Width="1280"
+        WindowStartupLocation = "CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid Margin="0,0,-6,-20" Background="#FFE6FFFF" Height="707" VerticalAlignment="Bottom">
 
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="0*"/>

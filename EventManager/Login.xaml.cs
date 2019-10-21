@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Data;
+using System.Data.SqlClient;
+using EventManager.Classes;
+
 namespace EventManager
 {
     /// <summary>
@@ -25,12 +29,28 @@ namespace EventManager
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SQLServerConnection.openConnection();
+            
+            SQLServerConnection.sql = "select * from *";
+            SQLServerConnection.cmd.CommandType = CommandType.Text;
+            SQLServerConnection.cmd.CommandText = SQLServerConnection.sql;
+
+            SQLServerConnection.da = new SqlDataAdapter(SQLServerConnection.cmd);
+            SQLServerConnection.dt = new DataTable();
+            SQLServerConnection.da.Fill(SQLServerConnection.dt);
+
+            SQLServerConnection.closeConnection();
+        }
+
         bool isTeacher = false;
         bool isStudent = false;
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             loginButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
+            exceptionLabel.Content = "";
 
             if (!(isTeacher || isStudent))
             {

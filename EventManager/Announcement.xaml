@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
-        Title="Window1" Height="720" Width="1280">
+        Title="Announcement Board" Height="720" Width="1280"
+        Loaded="Window_Loaded">
 	<Grid>
 		<Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,59,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
-		<Button x:Name="prevButton" Margin="10,324,1189,224" Click="Button_Click">
+		<Button x:Name="prevButton" Margin="10,324,1189,224" Click="prevButton_Click">
 			<Path Fill="Black" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
 		</Button>
-		<Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="Button_Click_1">
+		<Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="nextButton_Click">
 			<Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
 		</Button>
 		<Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>

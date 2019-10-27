@@ -6,27 +6,26 @@
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
-        WindowStartupLocation = "CenterScreen"
-        Loaded="Window_Loaded">
+        WindowStartupLocation = "CenterScreen">
     <Grid Margin="0,0,-6,-20" Background="#FFE6FFFF" Height="707" VerticalAlignment="Bottom">
 
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="0*"/>
-			<ColumnDefinition Width="0*"/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-		<Button x:Name="studentButton" Content="Student" HorizontalAlignment="Right" Margin="0,0,658,456" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="studentButton_Click"></Button>
-		<Button x:Name="teacherButton" Content="Teacher" Margin="656,0,0,456" VerticalAlignment="Bottom" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" HorizontalAlignment="Left" Width="321" Click="teacherButton_Click" Foreground="Black"/>
+        <Button x:Name="studentButton" Content="Student" HorizontalAlignment="Right" Margin="0,0,658,456" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="studentButton_Click"></Button>
+        <Button x:Name="teacherButton" Content="Teacher" Margin="656,0,0,456" VerticalAlignment="Bottom" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" HorizontalAlignment="Left" Width="321" Click="teacherButton_Click" Foreground="Black"/>
 
-		<Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="993,546,0,0" VerticalAlignment="Top" Width="185" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FF6BCAE2" Click="loginButton_Click"></Button>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="993,546,0,0" VerticalAlignment="Top" Width="185" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FF6BCAE2" Click="loginButton_Click"></Button>
 
-		<Label Content="User Id :" Grid.Column="2" HorizontalAlignment="Left" Margin="373,325,0,0" VerticalAlignment="Top" Height="59" Width="148" FontSize="36"/>
-		<Label x:Name="passwordLabel" Content="Password :" Grid.Column="2" HorizontalAlignment="Left" Margin="341,423,0,0" VerticalAlignment="Top" Height="59" Width="180" FontSize="36" RenderTransformOrigin="0.317,0.475"/>
+        <Label Content="User Id :" Grid.Column="2" HorizontalAlignment="Left" Margin="373,325,0,0" VerticalAlignment="Top" Height="59" Width="148" FontSize="36"/>
+        <Label x:Name="passwordLabel" Content="Password :" Grid.Column="2" HorizontalAlignment="Left" Margin="341,423,0,0" VerticalAlignment="Top" Height="59" Width="180" FontSize="36" RenderTransformOrigin="0.317,0.475"/>
 
-		<TextBox x:Name="userIdValue" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="526,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" FontSize="36"/>
-		<TextBox x:Name="passwordValue" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="526,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" FontSize="36"/>
-		<Label x:Name="exceptionLabel" Grid.ColumnSpan="3" Content="" HorizontalAlignment="Left" Margin="299,93,0,0" VerticalAlignment="Top" Height="62" Width="678" Background="#05FFFFFF" FontSize="30" Foreground="Red"/>
+        <TextBox x:Name="userIdValue" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="526,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" FontSize="36"/>
+        <Label x:Name="exceptionLabel" Grid.ColumnSpan="3" Content="" HorizontalAlignment="Left" Margin="299,93,0,0" VerticalAlignment="Top" Height="62" Width="678" Background="#05FFFFFF" FontSize="30" Foreground="Red"/>
+        <PasswordBox x:Name="passwordValue" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="526,423,0,0" VerticalAlignment="Top" Height="59" Width="415" FontSize="36"/>
 
-	</Grid>
+    </Grid>
 </Window>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//Used to act upon the SQLServerConnection
 using System.Data;
 using System.Data.SqlClient;
 using EventManager.Classes;
@@ -29,21 +30,6 @@ namespace EventManager
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            SQLServerConnection.openConnection();
-            
-            SQLServerConnection.sql = "select * from *";
-            SQLServerConnection.cmd.CommandType = CommandType.Text;
-            SQLServerConnection.cmd.CommandText = SQLServerConnection.sql;
-
-            SQLServerConnection.da = new SqlDataAdapter(SQLServerConnection.cmd);
-            SQLServerConnection.dt = new DataTable();
-            SQLServerConnection.da.Fill(SQLServerConnection.dt);
-
-            SQLServerConnection.closeConnection();
-        }
-
         bool isTeacher = false;
         bool isStudent = false;
 
@@ -57,8 +43,45 @@ namespace EventManager
                 exceptionLabel.Content = "**Student/Teacher Button NOT Selected**";
             }
             else
-            {
+            {   //SQL Command template.
+                //SqlCommand cmd = SQLServerConnection.initializeSqlCommand("");
+                //body
+                //SQLServerConnection.closeConnection();
 
+                SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select count(*) from LoginTable where usn=@usn and pwd=@pwd and usertype=@usertype");
+                char usertype = ' ';
+                bool studentOrTeacher = false;
+
+                if (isTeacher)
+                {
+                    usertype = 't';
+                    studentOrTeacher = true;
+                }
+                if (isStudent)
+                {
+                    usertype = 's';
+                    studentOrTeacher = false;
+                }
+
+                cmd.Parameters.AddWithValue("@usn", userIdValue.Text);
+                cmd.Parameters.AddWithValue("@pwd", passwordValue.Password);
+                cmd.Parameters.AddWithValue("@usertype", usertype);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    AnnouncementWindow announcement = new AnnouncementWindow(studentOrTeacher);
+                    announcement.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Username or password is incorrect.");
+                }
+
+                    
+                SQLServerConnection.closeConnection();
             }
             /*if(isTeacher&&isStudent)
                 exceptionLabel.Content = "**Student/Teacher Button NOT Selected**";*/

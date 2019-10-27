@@ -19,12 +19,14 @@ namespace EventManager.Classes
             return strConString;
         }
 
-        public static string sql;
         public static SqlConnection con = new SqlConnection();
         public static SqlCommand cmd = new SqlCommand("", con);
+        
+        /*
         public static SqlDataReader dr;
         public static DataTable dt;
         public static SqlDataAdapter da;
+        */
 
         public static void openConnection()
         {
@@ -61,5 +63,17 @@ namespace EventManager.Classes
             }
         }
 
+
+        //After calling this function, remember to call closeConnection.
+        public static SqlCommand initializeSqlCommand(String query)
+        {
+            openConnection();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+
+            return cmd;
+
+        } 
     }
 }

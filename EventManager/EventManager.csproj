@@ -82,6 +82,7 @@
     <Compile Include="Announcement.xaml.cs">
       <DependentUpon>Announcement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AnnouncementData.cs" />
     <Compile Include="Classes\SQLServerConnection.cs" />
     <Compile Include="CrearteEnteriestwo.xaml.cs">
       <DependentUpon>CrearteEnteriestwo.xaml</DependentUpon>
@@ -89,7 +90,6 @@
     <Compile Include="CreateEntriesone.xaml.cs">
       <DependentUpon>CreateEntriesone.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\RDSContext.cs" />
     <Page Include="CrearteEnteriestwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,7 +102,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\Helpers.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>

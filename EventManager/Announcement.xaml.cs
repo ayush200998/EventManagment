@@ -19,17 +19,34 @@ namespace EventManager
     /// </summary>
     public partial class AnnouncementWindow : Window
     {
-        public AnnouncementWindow()
+        bool studentOrTeacher = false; //false for student, true for teacher
+        public AnnouncementWindow(bool SoT)
         {
             InitializeComponent();
+            studentOrTeacher = SoT;
+            if (studentOrTeacher)
+            {
+                switchButton.IsEnabled = true;
+                switchButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                switchButton.IsEnabled = false;
+                switchButton.Visibility = Visibility.Hidden;
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void prevButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

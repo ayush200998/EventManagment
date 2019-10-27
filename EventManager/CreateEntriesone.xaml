@@ -1,18 +1,21 @@
-﻿<Window x:Class="EventManager.Window2"
+﻿<Window x:Class="EventManager.EntryOne"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
-        Title="Window2" Height="720" Width="1280">
-	<Grid>
-		<Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1061,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
-		<Label Content="Heading :" HorizontalAlignment="Left" Margin="64,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
-		<TextBlock x:Name="headingValue" HorizontalAlignment="Left" Margin="240,0,0,470" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" Width="900" Background="#FFFAFAFA"/>
-		<TextBlock x:Name="descriptionValue" HorizontalAlignment="Left" Margin="240,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="364" Width="900" Background="#FFFAFAFA"/>
-		<Label Content="Details" HorizontalAlignment="Left" Margin="88,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
-		<Button x:Name="nextButton" Content="Next" HorizontalAlignment="Left" Margin="919,781,0,0" VerticalAlignment="Top" Width="103" Height="33" FontSize="20" FontWeight="Bold"/>
+        Title="Create Announcement" Height="720" Width="1280">
+    <Grid Background="#FFE6FFFF">
+        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1061,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Heading :" HorizontalAlignment="Left" Margin="64,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock x:Name="headingValue" HorizontalAlignment="Left" Margin="240,0,0,470" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" Width="900" Background="#FFFAFAFA"/>
+        <TextBlock x:Name="descriptionValue" HorizontalAlignment="Left" Margin="240,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="364" Width="900" Background="#FFFAFAFA"/>
+        <Label Content=" Details :" HorizontalAlignment="Left" Margin="64,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Create Announcement&#xD;&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="573" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="nextButton_Click">
+            <Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
+        </Button>
 
-	</Grid>
+    </Grid>
 </Window>

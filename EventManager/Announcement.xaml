@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Announcement Board" Height="720" Width="1280"
         Loaded="Window_Loaded">
-	<Grid>
+	<Grid Background="#FFE6FFFF">
 		<Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,59,0,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
 		<Button x:Name="prevButton" Margin="10,324,1189,224" Click="prevButton_Click">
 			<Path Fill="Black" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
@@ -16,7 +16,7 @@
 			<Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
 		</Button>
 		<Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
-		<ListBox x:Name="listBoxValue" HorizontalAlignment="Left" Height="416" Margin="88,212,0,0" VerticalAlignment="Top" Width="1100"/>
+		<ListBox x:Name="notificationDetails" HorizontalAlignment="Left" Height="416" Margin="88,212,0,0" VerticalAlignment="Top" Width="1100"/>
 		<Path x:Name="rightArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="1337.387,484.902,77.251,404.081" RenderTransformOrigin="1.445,1.327" />
 		<Path x:Name="leftArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="-74.847,354.051,1489.485,534.932" RenderTransformOrigin="1.445,1.327" >
 			<Path.RenderTransform>
@@ -28,7 +28,7 @@
 				</TransformGroup>
 			</Path.RenderTransform>
 		</Path>
-		<Label Content="Notification Title" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="1100" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
+		<Label x:Name="notificationLabel" Content="Notification Title" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="1100" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
 
 
 

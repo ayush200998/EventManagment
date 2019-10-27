@@ -84,13 +84,13 @@
     </Compile>
     <Compile Include="Classes\AnnouncementData.cs" />
     <Compile Include="Classes\SQLServerConnection.cs" />
-    <Compile Include="CrearteEnteriestwo.xaml.cs">
-      <DependentUpon>CrearteEnteriestwo.xaml</DependentUpon>
+    <Compile Include="CrearteEnteriesTwo.xaml.cs">
+      <DependentUpon>CrearteEnteriesTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateEntriesone.xaml.cs">
-      <DependentUpon>CreateEntriesone.xaml</DependentUpon>
+    <Compile Include="CreateEntriesOne.xaml.cs">
+      <DependentUpon>CreateEntriesOne.xaml</DependentUpon>
     </Compile>
-    <Page Include="CrearteEnteriestwo.xaml">
+    <Page Include="CrearteEnteriesTwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,7 +110,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateEntriesone.xaml">
+    <Page Include="CreateEntriesOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

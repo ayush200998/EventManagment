@@ -8,6 +8,38 @@ namespace EventManager.Classes
 {
     public static class AnnouncementData
     {
-        public static String announcementTitle;
+        public static String announcementTitle = "Template Announcement";
+        public static String announcementDetails =
+            "This is a template announcement for all the students of all the departments." +
+            "There is a template workshop being conducted in our college by CSE department in association with TEMP." +
+            "\nInterested students are supposed to fill the form on the given link:" +
+            "\nLink : bit.ly/tempLate" +
+            "\n\n    Venue : Seminar Hall 1" +
+            "\n     Date : 26th October 2019 to 4th November 2019" +
+            "\n     Time : 9:00 AM to 4:00 PM" +
+            "\n\n For more information, contact the co-ordinator: " +
+            "\n Co-ordinator Name : Template Name" +
+            "\n Contact Number    : +9999999999";
+
+                                                //  CSE /  ISE  / ECE /  EEE  /  ME  / Civil 
+        public static bool[] departmentsAllowed = {false, false, false, false, false, false};
+
+        public static void setDepartments(bool cse = false, bool ise = false, bool ece = false, bool eee = false, bool me = false, bool civil = false)
+        {
+            departmentsAllowed[0] = cse;
+            departmentsAllowed[1] = ise;
+            departmentsAllowed[2] = ece;
+            departmentsAllowed[3] = eee;
+            departmentsAllowed[4] = me;
+            departmentsAllowed[5] = civil;
+            return;
+        }
+
+        public static bool[] getDepartments()
+        {
+            return departmentsAllowed;
+        }
+
+
     }
 }

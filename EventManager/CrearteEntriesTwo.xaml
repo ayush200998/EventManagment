@@ -1,0 +1,28 @@
+﻿<Window x:Class="EventManager.EntryTwo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventManager"
+        mc:Ignorable="d"
+        Title="Create Announcement" Height="720" Width="1280">
+    <Grid Background="#FFE6FFFF">
+        <Label Content="Organiser :" HorizontalAlignment="Left" Margin="159,186,0,0" VerticalAlignment="Top" Height="60" Width="181" FontSize="36"/>
+        <ComboBox x:Name="organiserCombobox" HorizontalAlignment="Left" Margin="345,186,0,0" VerticalAlignment="Top" Width="605" Height="60" Background="White" FontSize="36"/>
+        <Button x:Name="finishButton" Content="FInish" HorizontalAlignment="Left" Margin="919,781,0,0" VerticalAlignment="Top" Width="103" Height="33" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Create Announcement&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="573" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1000,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
+        <Button x:Name="prevButton" Margin="84,59,1152,577" Click="prevButton_Click">
+            <Path Fill="Black" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
+        </Button>
+        <Label Content="Eligible Branches :" HorizontalAlignment="Left" Margin="159,276,0,0" VerticalAlignment="Top" Height="60" Width="292" FontSize="36"/>
+        <Button x:Name="cseButton" Content="CSE" HorizontalAlignment="Right" Margin="0,0,792,250" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="cseButton_Click"/>
+        <Button x:Name="iseButton" Content="ISE" HorizontalAlignment="Right" Margin="0,0,466,250" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="iseButton_Click"/>
+        <Button x:Name="meButton"  Content="ME"  HorizontalAlignment="Right" Margin="0,0,140,250" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="meButton_Click"/>
+        <Button x:Name="eceButton" Content="ECE" HorizontalAlignment="Right" Margin="0,0,792,173" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="eceButton_Click"/>
+        <Button x:Name="eeeButton" Content="EEE" HorizontalAlignment="Right" Margin="0,0,466,173" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="eeeButton_Click"/>
+        <Button x:Name="civButton" Content="CIV" HorizontalAlignment="Right" Margin="0,0,140,173" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="civButton_Click"/>
+        <Button x:Name="createButton" Content="Create" HorizontalAlignment="Right" Margin="0,576,60,0" VerticalAlignment="Top" Width="179" Height="66" FontSize="36" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

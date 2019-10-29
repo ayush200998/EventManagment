@@ -23,9 +23,9 @@ namespace EventManager
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }
@@ -78,9 +78,11 @@ namespace EventManager
                 else
                 {
                     MessageBox.Show("Username or password is incorrect.");
+                    userIdValue.Text = "";
+                    passwordValue.Password = "";
                 }
 
-                    
+                cmd.Parameters.Clear();    
                 SQLServerConnection.closeConnection();
             }
             /*if(isTeacher&&isStudent)

@@ -36,11 +36,6 @@ namespace EventManager
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -53,7 +48,16 @@ namespace EventManager
 
         private void switchButton_Click(object sender, RoutedEventArgs e)
         {
+            EntryOne e1 = new EntryOne();
+            e1.Show();
+            this.Close();
+        }
 
+        private void logoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow lw = new LoginWindow();
+            lw.Show();
+            this.Close();
         }
     }
 }

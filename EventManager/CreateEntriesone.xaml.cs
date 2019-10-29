@@ -14,14 +14,21 @@ using System.Windows.Shapes;
 
 namespace EventManager
 {
-    /// <summary>
-    /// Interaction logic for Window2.xaml
-    /// </summary>
-    public partial class Window2 : Window
+    public partial class EntryOne : Window
     {
-        public Window2()
+        public EntryOne()
         {
             InitializeComponent();
+        }
+
+        private void switchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -39,7 +39,5 @@ namespace EventManager.Classes
         {
             return departmentsAllowed;
         }
-
-
     }
 }

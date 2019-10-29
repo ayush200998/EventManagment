@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Create Announcement" Height="720" Width="1280">
     <Grid Background="#FFE6FFFF">
-        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1061,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1061,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
         <Label Content="Heading :" HorizontalAlignment="Left" Margin="64,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock x:Name="headingValue" HorizontalAlignment="Left" Margin="240,0,0,470" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" Width="900" Background="#FFFAFAFA"/>
         <TextBlock x:Name="descriptionValue" HorizontalAlignment="Left" Margin="240,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="364" Width="900" Background="#FFFAFAFA"/>
         <Label Content=" Details :" HorizontalAlignment="Left" Margin="64,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="147" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Create Announcement&#xD;&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="573" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Create Announcement&#xD;&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
         <Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="nextButton_Click">
             <Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
         </Button>

@@ -40,7 +40,7 @@ namespace EventManager
 
             if (!(isTeacher || isStudent))
             {
-                exceptionLabel.Content = "**Student/Teacher Button NOT Selected**";
+                MessageBox.Show(" Please Select Student Or Teacher.","Select User Type");
             }
             else
             {   //SQL Command template.
@@ -49,19 +49,23 @@ namespace EventManager
                 //SQLServerConnection.closeConnection();
 
                 SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select count(*) from LoginTable where usn=@usn and pwd=@pwd and usertype=@usertype");
-                char usertype = ' ';
-                bool studentOrTeacher = false;
 
-                if (isTeacher)
-                {
-                    usertype = 't';
-                    studentOrTeacher = true;
-                }
-                if (isStudent)
-                {
-                    usertype = 's';
-                    studentOrTeacher = false;
-                }
+                 
+                
+                    char usertype = ' ';
+                    bool studentOrTeacher = false;
+
+                    if (isTeacher)
+                    {
+                        usertype = 't';
+                        studentOrTeacher = true;
+                    }
+                    if (isStudent)
+                    {
+                        usertype = 's';
+                        studentOrTeacher = false;
+                    }
+                
 
                 cmd.Parameters.AddWithValue("@usn", userIdValue.Text);
                 cmd.Parameters.AddWithValue("@pwd", passwordValue.Password);
@@ -77,7 +81,7 @@ namespace EventManager
                 }
                 else
                 {
-                    MessageBox.Show("Username or password is incorrect.");
+                    MessageBox.Show("Username or password is incorrect.","Invalid Login.");
                     userIdValue.Text = "";
                     passwordValue.Password = "";
                 }

@@ -81,7 +81,11 @@ namespace EventManager
                 }
                 else
                 {
+<<<<<<< HEAD
                     MessageBox.Show("Username or password is incorrect.","Invalid Login.");
+=======
+                    MessageBox.Show("Username or password is incorrect." + MessageBoxButton.OK + MessageBoxImage.Error);
+>>>>>>> 20c3d30e562657c892b882e6a2b68b1b0ef64c43
                     userIdValue.Text = "";
                     passwordValue.Password = "";
                 }

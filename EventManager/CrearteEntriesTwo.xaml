@@ -8,7 +8,14 @@
         Title="Create Announcement" Height="720" Width="1280">
     <Grid Background="#FFE6FFFF">
         <Label Content="Organiser :" HorizontalAlignment="Left" Margin="159,186,0,0" VerticalAlignment="Top" Height="60" Width="181" FontSize="36"/>
-        <ComboBox x:Name="organiserCombobox" HorizontalAlignment="Left" Margin="345,186,0,0" VerticalAlignment="Top" Width="605" Height="60" Background="White" FontSize="36"/>
+        <ComboBox x:Name="organiserCombobox" HorizontalAlignment="Left" Margin="345,186,0,0" VerticalAlignment="Top" Width="605" Height="60" Background="White" FontSize="36">
+            <ComboBoxItem Content="CSE"/>
+            <ComboBoxItem Content="ISE"/>
+            <ComboBoxItem Content="ECE"/>
+            <ComboBoxItem Content="EEE"/>
+            <ComboBoxItem Content="ME"/>
+            <ComboBoxItem Content="CIV"/>
+        </ComboBox>
         <Button x:Name="finishButton" Content="FInish" HorizontalAlignment="Left" Margin="919,781,0,0" VerticalAlignment="Top" Width="103" Height="33" FontSize="20" FontWeight="Bold"/>
         <Label Content="Create Announcement&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="573" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
         <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,59,1000,0" VerticalAlignment="Top" Width="147" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
@@ -22,7 +29,7 @@
         <Button x:Name="eceButton" Content="ECE" HorizontalAlignment="Right" Margin="0,0,792,173" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="eceButton_Click"/>
         <Button x:Name="eeeButton" Content="EEE" HorizontalAlignment="Right" Margin="0,0,466,173" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="eeeButton_Click"/>
         <Button x:Name="civButton" Content="CIV" HorizontalAlignment="Right" Margin="0,0,140,173" VerticalAlignment="Bottom" Width="321" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" BorderBrush="#FFC72D2D" Background="#FFA4A4A4" Click="civButton_Click"/>
-        <Button x:Name="createButton" Content="Create" HorizontalAlignment="Right" Margin="0,576,60,0" VerticalAlignment="Top" Width="179" Height="66" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="createButton" Content="Create" HorizontalAlignment="Right" Margin="0,576,60,0" VerticalAlignment="Top" Width="179" Height="66" FontSize="36" FontWeight="Bold" Click="CreateButton_Click"/>
 
     </Grid>
 </Window>

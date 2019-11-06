@@ -24,6 +24,15 @@ namespace EventManager.Classes
                                                 //  CSE /  ISE  / ECE /  EEE  /  ME  / Civil 
         public static bool[] departmentsAllowed = {false, false, false, false, false, false};
 
+        public static string returnDepatmentsAllowed()
+        {
+            string temp = "";
+
+
+
+            return temp;
+        }
+
         public static void setDepartments(bool cse = false, bool ise = false, bool ece = false, bool eee = false, bool me = false, bool civil = false)
         {
             departmentsAllowed[0] = cse;

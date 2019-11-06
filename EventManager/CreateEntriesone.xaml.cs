@@ -16,6 +16,10 @@ namespace EventManager
 {
     public partial class EntryOne : Window
     {
+        
+       
+
+
         public EntryOne()
         {
             InitializeComponent();
@@ -23,12 +27,28 @@ namespace EventManager
 
         private void switchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AnnouncementWindow a1 = new AnnouncementWindow(true);
+            a1.Show();
+            this.Close();
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
+            EntryTwo obj = new EntryTwo();
+            obj.Show();
+            this.Close();
+        }
 
+        public string returnHeading()
+        {
+            string heading = headingValue.Text;
+            return heading;
+        }
+         
+        public string returnDescription()
+        {
+            string description = descriptionValue.Text;
+            return description;
         }
     }
 }

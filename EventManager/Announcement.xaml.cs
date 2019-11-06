@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EventManager.Classes;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +60,18 @@ namespace EventManager
             LoginWindow lw = new LoginWindow();
             lw.Show();
             this.Close();
+        }
+
+        private void NotificationDetails_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement");
+            SqlDataReader reader=cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                notificationDetails.tex(reader.GetTextReader(2));
+            }
+            cmd.Parameters.Clear();
+            SQLServerConnection.closeConnection();
         }
     }
 }

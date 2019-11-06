@@ -15,7 +15,7 @@
             <Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
         </Button>
         <Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
-        <ListBox x:Name="notificationDetails" HorizontalAlignment="Left" Height="416" Margin="88,212,0,0" VerticalAlignment="Top" Width="1100"/>
+        <ListBox x:Name="notificationDetails" HorizontalAlignment="Left" Height="416" Margin="88,212,0,0" VerticalAlignment="Top" Width="1100" SelectionChanged="NotificationDetails_SelectionChanged"/>
         <Path x:Name="rightArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="1337.387,484.902,77.251,404.081" RenderTransformOrigin="1.445,1.327" />
         <Path x:Name="leftArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="-74.847,354.051,1489.485,534.932" RenderTransformOrigin="1.445,1.327" >
             <Path.RenderTransform>

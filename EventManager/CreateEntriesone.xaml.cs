@@ -11,18 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using EventManager.Classes;
 
 namespace EventManager
 {
     public partial class EntryOne : Window
     {
-        
-       
-
-
         public EntryOne()
         {
             InitializeComponent();
+            headingValue.Text = AnnouncementData.announcementTitle;
+            descriptionValue.Text = AnnouncementData.announcementDetails;
         }
 
         private void switchButton_Click(object sender, RoutedEventArgs e)
@@ -34,6 +33,10 @@ namespace EventManager
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
+
+            AnnouncementData.announcementTitle = headingValue.Text;
+            AnnouncementData.announcementDetails = descriptionValue.Text;
+
             EntryTwo obj = new EntryTwo();
             obj.Show();
             this.Close();

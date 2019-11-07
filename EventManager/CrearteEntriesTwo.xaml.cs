@@ -11,18 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
+using System.Data;
+using System.Data.SqlClient;
 using EventManager.Classes;
+
 
 namespace EventManager
 {
-    
+
     /// <summary>
     /// Interaction logic for CrearteEnteriestwo.xaml
     /// </summary>
     public partial class EntryTwo : Window
     {
 
-          
+
         public EntryTwo()
         {
             InitializeComponent();
@@ -43,60 +47,47 @@ namespace EventManager
 
         }
 
+        private void changeButtonColor(Button b, int index)
+        {
+            AnnouncementData.departmentsAllowed[index] = !(AnnouncementData.departmentsAllowed[index]);
+            if (AnnouncementData.departmentsAllowed[index])
+            {
+                b.Background = (Brush)(new BrushConverter().ConvertFrom("#FF006A4E"));
+            }
+            else
+            {
+                b.Background = (Brush)(new BrushConverter().ConvertFrom("#FF8B0101"));
+            }
+        }
+
         private void cseButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(AnnouncementData.departmentsAllowed[0])
-            {
-                cseButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
-            }
+            changeButtonColor(cseButton, 0);
         }
 
         private void iseButton_Click(object sender, RoutedEventArgs e)
         {
-
-            // if (AnnouncementData.departmentsAllowed[1])
-            AnnouncementData.departmentsAllowed[1] = !AnnouncementData.departmentsAllowed[1];
-             if (AnnouncementData.departmentsAllowed[1])
-            {
-                iseButton.Background = (Brush)(new BrushConverter().ConvertFrom("#800000"));
-            }
-            else
-            {
-                iseButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
-            }
+            changeButtonColor(iseButton, 1);
         }
 
         private void meButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AnnouncementData.departmentsAllowed[2])
-            {
-                eceButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
-            }
+            changeButtonColor(meButton, 2);
         }
 
         private void eceButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AnnouncementData.departmentsAllowed[3])
-            {
-                eeeButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
-            }
+            changeButtonColor(eceButton, 3);
         }
 
         private void eeeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AnnouncementData.departmentsAllowed[4])
-            {
-                meButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
-            }
+            changeButtonColor(eeeButton, 4);
         }
 
         private void civButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AnnouncementData.departmentsAllowed[5])
-            {
-                civButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
-            }
+            changeButtonColor(civButton, 5);
         }
 
         public void getValues()
@@ -105,11 +96,43 @@ namespace EventManager
             string heading = e1.returnHeading();
             string description = e1.returnDescription();
 
-
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            AnnouncementData.calculateErrors();
+
+            if (organiserCombobox.SelectedIndex <= -1)
+            {
+                MessageBox.Show("Please select the department which is passing this information.");
+            }
+            else if (AnnouncementData.noDepartmentSelected)
+            {
+                MessageBox.Show("Please select at least one department which this announcement/notification has to be shown to.");
+            }
+            else
+            {
+                SqlCommand cmd = SQLServerConnection.initializeSqlCommand("insert into Announcement (event_heading, event_desc, org_branch, elig_branch, date_created) values (@heading, @desc, @org, @elig, @date)");
+                cmd.Parameters.AddWithValue("@heading", AnnouncementData.announcementTitle);
+                cmd.Parameters.AddWithValue("@desc", AnnouncementData.announcementDetails);
+                cmd.Parameters.AddWithValue("@org", organiserCombobox.SelectedIndex);
+                cmd.Parameters.AddWithValue("@elig", AnnouncementData.eligibleBranches());
+
+                DateTime myDateTime = DateTime.Now;
+                string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+                cmd.Parameters.AddWithValue("@date", sqlFormattedDate);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.Clear();
+                SQLServerConnection.closeConnection();
+
+                AnnouncementWindow aw = new AnnouncementWindow(true);
+                aw.Show();
+                this.Close();
+
+            }
 
         }
     }

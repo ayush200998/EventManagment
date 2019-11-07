@@ -23,30 +23,29 @@ namespace EventManager.Classes
 
                                                 //  CSE /  ISE  / ECE /  EEE  /  ME  / Civil 
         public static bool[] departmentsAllowed = {false, false, false, false, false, false};
-
-        public static string returnDepatmentsAllowed()
+        public static bool noDepartmentSelected = true;
+  
+        public static string eligibleBranches()
         {
             string temp = "";
-
-
-
+            for(int i=0; i<6; i++)
+            {
+                if (departmentsAllowed[i])
+                    temp += 't';
+                else temp += 'f';
+            }
             return temp;
         }
 
-        public static void setDepartments(bool cse = false, bool ise = false, bool ece = false, bool eee = false, bool me = false, bool civil = false)
+        public static void calculateErrors()
         {
-            departmentsAllowed[0] = cse;
-            departmentsAllowed[1] = ise;
-            departmentsAllowed[2] = ece;
-            departmentsAllowed[3] = eee;
-            departmentsAllowed[4] = me;
-            departmentsAllowed[5] = civil;
-            return;
-        }
-
-        public static bool[] getDepartments()
-        {
-            return departmentsAllowed;
+            for (int i = 0; i< 6; i++) {
+                if (departmentsAllowed[i])
+                {
+                    noDepartmentSelected = false; return;
+                }
+                else noDepartmentSelected = true;
+            }
         }
     }
 }

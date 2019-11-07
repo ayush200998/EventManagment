@@ -49,9 +49,7 @@ namespace EventManager
                 //SQLServerConnection.closeConnection();
 
                 SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select count(*) from LoginTable where usn=@usn and pwd=@pwd and usertype=@usertype");
-
-                 
-                
+               
                     char usertype = ' ';
                     bool studentOrTeacher = false;
 
@@ -66,7 +64,7 @@ namespace EventManager
                         studentOrTeacher = false;
                     }
                 
-
+                
                 cmd.Parameters.AddWithValue("@usn", userIdValue.Text);
                 cmd.Parameters.AddWithValue("@pwd", passwordValue.Password);
                 cmd.Parameters.AddWithValue("@usertype", usertype);

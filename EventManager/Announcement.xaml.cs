@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using EventManager.Classes;
 
 namespace EventManager
 {
@@ -25,7 +26,14 @@ namespace EventManager
         public AnnouncementWindow(bool SoT)
         {
             InitializeComponent();
-            updateAnnouncement();
+            if (!AnnouncementData.wasPreviousButtonClicked)
+            {
+                updateAnnouncement();
+            }
+            if (AnnouncementData.wasPreviousButtonClicked)
+            {
+                updatePrevious();
+            }
             studentOrTeacher = SoT;
             if (studentOrTeacher)
             {
@@ -46,36 +54,11 @@ namespace EventManager
 
         private void prevButton_Click(object sender, RoutedEventArgs e)
         {
+            updatePrevious();
             AnnouncementWindow aw = new AnnouncementWindow(true);
             aw.Show();
             this.Close();
-            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select event_id from Announcement");
-            SqlDataReader reader = cmd.ExecuteReader();
-            var @event_id =int.Parse(reader["event_id"].ToString());
-            cmd.Parameters.Clear(); reader.Close();
-            
-            cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement where event_id=@event_id-1");
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                notificationDetails.Text = (reader["event_desc"].ToString());
-            }
-            cmd.Parameters.Clear(); reader.Close();
-            cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=@event_id-1");
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                dateLabel.Content = (reader["date_created"].ToString());
-            }
-            cmd.Parameters.Clear(); reader.Close();
-            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement where event_id=@event_id-1");
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                notificationLabel.Content = (reader["event_heading"].ToString());
-            }
-            cmd.Parameters.Clear(); reader.Close();
-            SQLServerConnection.closeConnection();
+            //updatePrevious();
         }
 
         private void switchButton_Click(object sender, RoutedEventArgs e)
@@ -101,6 +84,7 @@ namespace EventManager
                 notificationDetails.Text = (reader["event_desc"].ToString());   
             }
             cmd.Parameters.Clear();reader.Close();
+
             cmd= SQLServerConnection.initializeSqlCommand("select date_created from Announcement");
             reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -117,5 +101,65 @@ namespace EventManager
             cmd.Parameters.Clear();
             SQLServerConnection.closeConnection();
         }
+        public void updatePrevious()
+        {
+            AnnouncementData.wasPreviousButtonClicked = true;
+
+            // string querystring = "Select event_id From dbo.Announcement where event_id = 1";
+            //SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=4 ");
+            
+             SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=4 ");
+            SqlDataReader reader = cmd.ExecuteReader();
+            
+
+                while (reader.Read())
+                {
+                    notificationDetails.Text = (reader["event_desc"].ToString());
+                }
+
+
+                cmd.Parameters.Clear(); reader.Close();
+
+
+
+            /* cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement");
+             SqlDataReader reader = cmd.ExecuteReader();
+             while (reader.Read())
+             {
+                 dateLabel.Content = (reader["date_created"].ToString());
+             }
+             cmd.Parameters.Clear(); reader.Close();
+             cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement");
+             reader = cmd.ExecuteReader();
+             while (reader.Read())
+             {
+                 notificationLabel.Content = (reader["event_heading"].ToString());
+             }
+             cmd.Parameters.Clear();
+             SQLServerConnection.closeConnection();*/
+
+
+            cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=4");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                dateLabel.Content = (reader["date_created"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+
+            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement where event_id=4");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                notificationLabel.Content = (reader["event_heading"].ToString());
+            }
+            cmd.Parameters.Clear();
+            SQLServerConnection.closeConnection();
+
+
+        }
+
     }
+
 }
+

@@ -8,6 +8,7 @@ namespace EventManager.Classes
 {
     public static class AnnouncementData
     {
+        public static bool wasPreviousButtonClicked = false;
         public static String announcementTitle = "Template Announcement";
         public static String announcementDetails =
             "This is a template announcement for all the students of all the departments." +

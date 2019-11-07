@@ -25,6 +25,7 @@ namespace EventManager
         public AnnouncementWindow(bool SoT)
         {
             InitializeComponent();
+            updateAnnouncement();
             studentOrTeacher = SoT;
             if (studentOrTeacher)
             {
@@ -45,7 +46,36 @@ namespace EventManager
 
         private void prevButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AnnouncementWindow aw = new AnnouncementWindow(true);
+            aw.Show();
+            this.Close();
+            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select event_id from Announcement");
+            SqlDataReader reader = cmd.ExecuteReader();
+            var @event_id =int.Parse(reader["event_id"].ToString());
+            cmd.Parameters.Clear(); reader.Close();
+            
+            cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement where event_id=@event_id-1");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                notificationDetails.Text = (reader["event_desc"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+            cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=@event_id-1");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                dateLabel.Content = (reader["date_created"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement where event_id=@event_id-1");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                notificationLabel.Content = (reader["event_heading"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+            SQLServerConnection.closeConnection();
         }
 
         private void switchButton_Click(object sender, RoutedEventArgs e)
@@ -62,13 +92,27 @@ namespace EventManager
             this.Close();
         }
 
-        private void NotificationDetails_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void updateAnnouncement()
         {
             SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement");
-            SqlDataReader reader=cmd.ExecuteReader();
-            while(reader.Read())
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                notificationDetails.tex(reader.GetTextReader(2));
+                notificationDetails.Text = (reader["event_desc"].ToString());   
+            }
+            cmd.Parameters.Clear();reader.Close();
+            cmd= SQLServerConnection.initializeSqlCommand("select date_created from Announcement");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                dateLabel.Content = (reader["date_created"].ToString());
+            }
+            cmd.Parameters.Clear();reader.Close();
+            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement");
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                notificationLabel.Content = (reader["event_heading"].ToString());
             }
             cmd.Parameters.Clear();
             SQLServerConnection.closeConnection();

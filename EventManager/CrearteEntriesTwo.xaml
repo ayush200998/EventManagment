@@ -17,9 +17,9 @@
             <ComboBoxItem Content="Department of CIV"/>
         </ComboBox>
         <Button x:Name="finishButton" Content="FInish" HorizontalAlignment="Left" Margin="919,781,0,0" VerticalAlignment="Top" Width="103" Height="33" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Create Announcement&#xA;" HorizontalAlignment="Left" Margin="377,33,0,0" VerticalAlignment="Top" Height="79" Width="573" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Create Announcement&#xA;" HorizontalAlignment="Left" Margin="377,33,0,0" VerticalAlignment="Top" Height="79" Width="573" FontSize="48" FontWeight="Bold"/>
         <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="108,0,0,578.4" VerticalAlignment="Bottom" Width="147" Height="50" FontSize="24" FontWeight="Bold" Click="switchButton_Click" Background="#FFFC9090" RenderTransformOrigin="0.18,1.352"/>
-        <Button x:Name="prevButton" Margin="0,0,1170.6,578.4" Click="prevButton_Click" Height="50" HorizontalAlignment="Right" Width="54" VerticalAlignment="Bottom">
+        <Button x:Name="prevButton" Margin="0,0,1170.6,578.4" Click="prevButton_Click" Height="50" HorizontalAlignment="Right" Width="54" VerticalAlignment="Bottom" >
             <Path Fill="#FFFC9090" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Uniform" RenderTransformOrigin="0.125,2.097" Height="49.6">
                 <Path.Effect>
                     <DropShadowEffect/>

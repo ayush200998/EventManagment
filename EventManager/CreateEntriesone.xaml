@@ -8,13 +8,13 @@
         Title="Create Announcement" Height="720" Width="1280">
     <Grid Background="#FFD2CEE5">
         <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Right" Margin="0,36,1089.6,0" VerticalAlignment="Top" Width="142" Height="51" FontSize="24" FontWeight="Bold" Click="switchButton_Click" Background="#FFFC9090"/>
-        <Label Content="Heading :" HorizontalAlignment="Left" Margin="34,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="201" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Heading :" HorizontalAlignment="Left" Margin="34,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="63" Width="201" FontSize="36" FontWeight="Bold"/>
         <TextBox x:Name="headingValue" HorizontalAlignment="Left" Margin="240,0,0,470" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" Width="900" Background="#FFFAFAFA" FontSize="28"/>
         <TextBox x:Name="descriptionValue" HorizontalAlignment="Left" Margin="240,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="364" Width="900" Background="#FFFAFAFA" FontSize="20"/>
         <Label Content=" Details :" HorizontalAlignment="Left" Margin="42,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="61" Width="169" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Create Announcement&#xD;&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Create Announcement&#xD;&#xA;" HorizontalAlignment="Left" Margin="377,36,0,0" VerticalAlignment="Top" Height="76" Width="517" FontSize="48" FontWeight="Bold"/>
         <Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="nextButton_Click">
-            <Path Fill="#FFFC9090" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Uniform" />
+            <Path Fill="#FFFC9090" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" />
         </Button>
 
     </Grid>

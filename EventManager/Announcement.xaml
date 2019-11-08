@@ -12,9 +12,9 @@
             <Path Fill="#FFFC9090" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
         </Button>
         <Button x:Name="nextButton" Margin="1193,324,0,0" OpacityMask="Black" Click="nextButton_Click" HorizontalAlignment="Left" Width="75" Height="142" VerticalAlignment="Top">
-            <Path Fill="#FFFC9090" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Uniform"/>
+            <Path Fill="#FFFC9090" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
         </Button>
-        <Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold"/>
         <Path x:Name="rightArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="1337.387,484.902,77.251,404.081" RenderTransformOrigin="1.445,1.327" />
         <Path x:Name="leftArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="-74.847,354.051,1489.485,534.932" RenderTransformOrigin="1.445,1.327" >
             <Path.RenderTransform>
@@ -29,13 +29,7 @@
         <Label x:Name="notificationLabel" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="766" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
         <Button x:Name="logoutButton" Content="Logout" HorizontalAlignment="Left" Margin="161,59,0,0" VerticalAlignment="Top" Width="122" Height="50" FontSize="24" FontWeight="Bold" Click="logoutButton_Click" Background="#FFFC9090"/>
         <Label x:Name="dateLabel" HorizontalAlignment="Left" Margin="885,141,0,0" VerticalAlignment="Top" Width="360" Height="66" FontSize="36"/>
-        <TextBox x:Name="notificationDetails" HorizontalAlignment="Left" Margin="121,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="384" Width="1033" FontSize="18" FontStyle="Italic">
-            <TextBox.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFCABCBC" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBox.Foreground>
+        <TextBox x:Name="notificationDetails" HorizontalAlignment="Left" Margin="121,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="384" Width="1033" FontSize="18" FontStyle="Italic" Background="White" SelectionOpacity="-11" Foreground="#FF1A1818">
             <!--<Run Background="#FFFFF8F8" Foreground="{x:Null}" Text=""/>-->
         </TextBox>
     </Grid>

@@ -22,24 +22,24 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <GroupBox x:Name="GroupBoxDetails" Grid.ColumnSpan="3" Header="" HorizontalAlignment="Left" Height="577" Margin="542,74,0,0" VerticalAlignment="Top" Width="728" Background="White" >
+        <GroupBox x:Name="GroupBoxDetails" Grid.ColumnSpan="3" Header="" HorizontalAlignment="Left" Height="496" Margin="542,117,0,0" VerticalAlignment="Top" Width="728" Background="White" >
             <GroupBox.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect BlurRadius="10" Opacity="0.55" Direction="180" Color="#FF222121" ShadowDepth="3"/>
             </GroupBox.Effect>
         </GroupBox>
-        <Button x:Name="studentButton" Content="Student" HorizontalAlignment="Right" Margin="0,0,410,456" VerticalAlignment="Bottom" Width="278" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFFC9090" Click="studentButton_Click"></Button>
-        <Button x:Name="teacherButton" Content="Teacher" Margin="933,0,0,456" VerticalAlignment="Bottom" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFFC9090" HorizontalAlignment="Left" Width="278" Click="teacherButton_Click" Foreground="Black"/>
+        <Button x:Name="studentButton" Content="Student" HorizontalAlignment="Right" Margin="0,0,415,469" VerticalAlignment="Bottom" Width="138" Height="59" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="{x:Null}" Click="studentButton_Click"></Button>
+        <Button x:Name="teacherButton" Content="Teacher" Margin="911,0,0,469" VerticalAlignment="Bottom" Height="59" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="{x:Null}" HorizontalAlignment="Left" Width="138" Click="teacherButton_Click" Foreground="Black"/>
 
-        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="1026,531,0,0" VerticalAlignment="Top" Width="185" Height="72" FontSize="36" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFFC9090" Click="loginButton_Click"></Button>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="933,525,0,0" VerticalAlignment="Top" Width="120" Height="46" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFFC9090" Click="loginButton_Click"></Button>
 
-        <Label Content="User Id :" Grid.Column="2" HorizontalAlignment="Left" Margin="632,325,0,0" VerticalAlignment="Top" Height="59" Width="148" FontSize="36"/>
-        <Label x:Name="passwordLabel" Content="Password :" Grid.Column="2" HorizontalAlignment="Left" Margin="592,423,0,0" VerticalAlignment="Top" Height="59" Width="180" FontSize="36" RenderTransformOrigin="0.317,0.475"/>
+        <Label Content="User Id :" Grid.Column="2" HorizontalAlignment="Left" Margin="717,281,0,0" VerticalAlignment="Top" Height="59" Width="148" FontSize="18"/>
+        <Label x:Name="passwordLabel" Content="Password :" Grid.Column="2" HorizontalAlignment="Left" Margin="717,399,0,0" VerticalAlignment="Top" Height="59" Width="180" FontSize="18" RenderTransformOrigin="0.317,0.475"/>
 
-        <TextBox x:Name="userIdValue" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="785,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="36"/>
+        <TextBox x:Name="userIdValue" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="720,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="36"/>
         <Label x:Name="exceptionLabel"  Grid.ColumnSpan="3" Content="" HorizontalAlignment="Left" Margin="785,93,0,0" VerticalAlignment="Top" Height="62" Width="264" Background="#05FFFFFF" FontSize="30" Foreground="Red"/>
-        <PasswordBox x:Name="passwordValue" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="785,423,0,0" VerticalAlignment="Top" Height="59" Width="329" FontSize="36"/>
-        <Label Grid.ColumnSpan="3" Content="Welcome To" HorizontalAlignment="Left" Margin="27,281,0,0" VerticalAlignment="Top" Height="76" Width="273" FontSize="48" FontStyle="Italic"/>
-        <Label Grid.ColumnSpan="3" Content="&quot;CONOB&quot;" HorizontalAlignment="Left" Margin="202,357,0,0" VerticalAlignment="Top" Height="99" Width="312" FontSize="72"/>
+        <PasswordBox x:Name="passwordValue" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="720,439,0,0" VerticalAlignment="Top" Height="59" Width="329" FontSize="36"/>
+        <Label Grid.ColumnSpan="3" Content="Welcome To" HorizontalAlignment="Left" Margin="240,289,0,0" VerticalAlignment="Top" Height="96" Width="191" FontSize="24"/>
+        <Label Grid.ColumnSpan="3" Content="CONOB" HorizontalAlignment="Left" Margin="120,302,0,0" VerticalAlignment="Top" Height="99" Width="371" FontSize="72" FontWeight="Bold" Background="{x:Null}" Foreground="#FF201E1E"/>
 
 
 

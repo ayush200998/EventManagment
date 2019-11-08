@@ -14,7 +14,7 @@ namespace EventManager.Classes
         public static bool wasNextButtonClicked = false;
 
         public static int arrLength;
-        public static int arrLengthNext;
+       // public static int arrLengthNext;
 
         public static String announcementTitle = "Template Announcement";
         public static String announcementDetails =

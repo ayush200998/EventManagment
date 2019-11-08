@@ -83,7 +83,7 @@ namespace EventManager
             {
                 notificationDetails.Text = (reader["event_desc"].ToString());   
             }
-            cmd.Parameters.Clear();reader.Close();
+            cmd.Parameters.Clear(); reader.Close();
 
             cmd= SQLServerConnection.initializeSqlCommand("select date_created from Announcement");
             reader = cmd.ExecuteReader();
@@ -91,52 +91,37 @@ namespace EventManager
             {
                 dateLabel.Content = (reader["date_created"].ToString());
             }
-            cmd.Parameters.Clear();reader.Close();
+            cmd.Parameters.Clear(); reader.Close();
+
             cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement");
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 notificationLabel.Content = (reader["event_heading"].ToString());
             }
-            cmd.Parameters.Clear();
+            cmd.Parameters.Clear(); reader.Close();
             SQLServerConnection.closeConnection();
         }
         public void updatePrevious()
         {
             AnnouncementData.wasPreviousButtonClicked = true;
-
-            // string querystring = "Select event_id From dbo.Announcement where event_id = 1";
-            //SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=4 ");
             
-             SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=4 ");
+            
+            //SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=4 ");
+
+            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=@id");
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.Value = AnnouncementData.arrlength;
+            cmd.Parameters.Add(param);
             SqlDataReader reader = cmd.ExecuteReader();
             
 
-                while (reader.Read())
-                {
+            while (reader.Read())
+            {
                     notificationDetails.Text = (reader["event_desc"].ToString());
-                }
-
-
-                cmd.Parameters.Clear(); reader.Close();
-
-
-
-            /* cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement");
-             SqlDataReader reader = cmd.ExecuteReader();
-             while (reader.Read())
-             {
-                 dateLabel.Content = (reader["date_created"].ToString());
-             }
-             cmd.Parameters.Clear(); reader.Close();
-             cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement");
-             reader = cmd.ExecuteReader();
-             while (reader.Read())
-             {
-                 notificationLabel.Content = (reader["event_heading"].ToString());
-             }
-             cmd.Parameters.Clear();
-             SQLServerConnection.closeConnection();*/
+            }
+            cmd.Parameters.Clear(); reader.Close();
 
 
             cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=4");
@@ -153,10 +138,22 @@ namespace EventManager
             {
                 notificationLabel.Content = (reader["event_heading"].ToString());
             }
-            cmd.Parameters.Clear();
+            cmd.Parameters.Clear(); reader.Close();
             SQLServerConnection.closeConnection();
 
 
+        }
+        public static int getCount()
+        {
+          SqlCommand  cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement ");
+            SqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                AnnouncementData.count++;
+            }
+            reader.Close();
+            Console.WriteLine(AnnouncementData.count);
+            return AnnouncementData.count;
         }
 
     }

@@ -27,20 +27,22 @@ namespace EventManager
         bool studentOrTeacher = false; //false for student, true for teacher
         public AnnouncementWindow(bool SoT)
         {
-                   
+
             //AnnouncementData.arrlengthnext = getCountNext();
 
             InitializeComponent();
-
+            totalCount.Content = getCount().ToString();
             if (!AnnouncementData.wasPreviousButtonClicked && !AnnouncementData.wasNextButtonClicked)
             {
                 AnnouncementData.count = 0;
                 AnnouncementData.arrLength = getCount();
+                
                 //AnnouncementData.arrLengthNext = getCount();
                // AnnouncementData.wasPreviousButtonClicked = true;
                // AnnouncementData.wasNextButtonClicked = false;
                 updateAnnouncement();
             }
+            
             /*if(!AnnouncementData.wasNextButtonClicked)
             {
                 //AnnouncementData.arrLength = getCount();
@@ -70,6 +72,7 @@ namespace EventManager
                 switchButton.IsEnabled = false;
                 switchButton.Visibility = Visibility.Hidden;
             }
+            Currentcount.Content = AnnouncementData.arrLength;
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
@@ -252,6 +255,7 @@ namespace EventManager
 
 
         }
+       
 
         //Count for next page index
        /* public static int getCountNext()

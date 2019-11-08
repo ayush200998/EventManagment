@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
         Title="Announcement Board" Height="720" Width="1280">
-    <Grid Background="#FFD2CEE5">
+    <Grid x:Name="totalcount" Background="#FFD2CEE5">
         <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="61,59,0,0" VerticalAlignment="Top" Width="95" Height="50" FontSize="24" FontWeight="Bold" Click="switchButton_Click" Background="#FFFC9090"/>
         <Button x:Name="prevButton" Margin="0,324,1188.6,0" Click="prevButton_Click" HorizontalAlignment="Right" Width="75" Height="142" VerticalAlignment="Top">
             <Path Fill="#FFFC9090" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
@@ -26,11 +26,15 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Label x:Name="notificationLabel" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="766" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
+        <Label x:Name="notificationLabel" HorizontalAlignment="Left" Margin="121,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="653" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
         <Button x:Name="logoutButton" Content="Logout" HorizontalAlignment="Left" Margin="161,59,0,0" VerticalAlignment="Top" Width="122" Height="50" FontSize="24" FontWeight="Bold" Click="logoutButton_Click" Background="#FFFC9090"/>
-        <Label x:Name="dateLabel" HorizontalAlignment="Left" Margin="885,141,0,0" VerticalAlignment="Top" Width="360" Height="66" FontSize="36"/>
+        <Label x:Name="dateLabel" HorizontalAlignment="Left" Margin="779,159,0,0" VerticalAlignment="Top" Width="375" Height="66" FontSize="36"/>
         <TextBox x:Name="notificationDetails" HorizontalAlignment="Left" Margin="121,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="384" Width="1033" FontSize="18" FontStyle="Italic" Background="White" SelectionOpacity="-11" Foreground="#FF1A1818">
             <!--<Run Background="#FFFFF8F8" Foreground="{x:Null}" Text=""/>-->
         </TextBox>
+        <Label x:Name="Currentcount"  HorizontalAlignment="Left" Margin="1025,638,0,0" VerticalAlignment="Top" Height="42" Width="38" FontSize="24" RenderTransformOrigin="-0.373,0.514"/>
+        <Label Content="/" HorizontalAlignment="Left" Margin="1068,638,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,1.656" Width="32" FontSize="24" Height="37"/>
+        <Label x:Name="totalCount" Content="" HorizontalAlignment="Left" Margin="1105,638,0,0" VerticalAlignment="Top" Width="39" FontSize="24" RenderTransformOrigin="0.465,0.111" Height="37"/>
+
     </Grid>
 </Window>

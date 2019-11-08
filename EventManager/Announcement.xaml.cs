@@ -13,7 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+#pragma warning disable CS0105 // The using directive for 'EventManager.Classes' appeared previously in this namespace
 using EventManager.Classes;
+#pragma warning restore CS0105 // The using directive for 'EventManager.Classes' appeared previously in this namespace
 
 namespace EventManager
 {
@@ -25,15 +27,36 @@ namespace EventManager
         bool studentOrTeacher = false; //false for student, true for teacher
         public AnnouncementWindow(bool SoT)
         {
+            AnnouncementData.count = 0;        
+            //AnnouncementData.arrlengthnext = getCountNext();
+
             InitializeComponent();
+
             if (!AnnouncementData.wasPreviousButtonClicked)
             {
+                AnnouncementData.arrLength = getCount();
+                //AnnouncementData.arrLengthNext = getCount();
+                AnnouncementData.wasPreviousButtonClicked = true;
+                //AnnouncementData.wasNextButtonClicked = true;
                 updateAnnouncement();
             }
+            /*if(!AnnouncementData.wasNextButtonClicked)
+            {
+                AnnouncementData.arrLength = getCount();
+                AnnouncementData.wasNextButtonClicked = true;
+                updateAnnouncement();
+            }*/
+
             if (AnnouncementData.wasPreviousButtonClicked)
             {
                 updatePrevious();
             }
+
+            if (AnnouncementData.wasNextButtonClicked)
+            {
+                updateNext();
+            }
+
             studentOrTeacher = SoT;
             if (studentOrTeacher)
             {
@@ -50,15 +73,18 @@ namespace EventManager
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
 
+            AnnouncementWindow aw = new AnnouncementWindow(true);
+            aw.Show();
+            this.Close();
         }
 
         private void prevButton_Click(object sender, RoutedEventArgs e)
         {
-            updatePrevious();
+             
             AnnouncementWindow aw = new AnnouncementWindow(true);
             aw.Show();
             this.Close();
-            //updatePrevious();
+            
         }
 
         private void switchButton_Click(object sender, RoutedEventArgs e)
@@ -74,7 +100,8 @@ namespace EventManager
             lw.Show();
             this.Close();
         }
-
+        
+        //Announcement
         public void updateAnnouncement()
         {
             SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement");
@@ -102,21 +129,20 @@ namespace EventManager
             cmd.Parameters.Clear(); reader.Close();
             SQLServerConnection.closeConnection();
         }
+
+        //Update Previous
         public void updatePrevious()
         {
             AnnouncementData.wasPreviousButtonClicked = true;
-            
-            
-            //SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=4 ");
-
+            SqlDataReader reader;
             SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=@id");
+
             SqlParameter param = new SqlParameter();
             param.ParameterName = "@id";
-            param.Value = AnnouncementData.arrlength;
-            cmd.Parameters.Add(param);
-            SqlDataReader reader = cmd.ExecuteReader();
-            
+            param.Value = AnnouncementData.arrLength;
+            cmd.Parameters.Add(param);            
 
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                     notificationDetails.Text = (reader["event_desc"].ToString());
@@ -124,7 +150,12 @@ namespace EventManager
             cmd.Parameters.Clear(); reader.Close();
 
 
-            cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=4");
+            cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=@id");
+            param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.Value = AnnouncementData.arrLength;
+            cmd.Parameters.Add(param);
+
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -132,7 +163,12 @@ namespace EventManager
             }
             cmd.Parameters.Clear(); reader.Close();
 
-            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement where event_id=4");
+            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement where event_id=@id");
+            param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.Value = AnnouncementData.arrLength;
+            cmd.Parameters.Add(param);
+
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -141,22 +177,79 @@ namespace EventManager
             cmd.Parameters.Clear(); reader.Close();
             SQLServerConnection.closeConnection();
 
+            if (AnnouncementData.arrLength > 1)
+            {
+                --AnnouncementData.arrLength;
+            }
 
         }
+
+        // Count for Previous page index
         public static int getCount()
         {
-          SqlCommand  cmd = SQLServerConnection.initializeSqlCommand("select event_desc from Announcement ");
-            SqlDataReader reader = cmd.ExecuteReader();
-            while(reader.Read())
-            {
-                AnnouncementData.count++;
-            }
-            reader.Close();
-            Console.WriteLine(AnnouncementData.count);
+            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select count(*) from Announcement ");
+            AnnouncementData.count = (int)cmd.ExecuteScalar();
+            cmd.Parameters.Clear();
             return AnnouncementData.count;
         }
 
-    }
+        //Update Next
+        public void updateNext()
+        {
+            AnnouncementData.wasNextButtonClicked = true;
+            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("Select event_desc From Announcement where event_id=@id");
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.Value = AnnouncementData.arrLengthNext;
+            cmd.Parameters.Add(param);
+            SqlDataReader reader = cmd.ExecuteReader();
 
+
+            while (reader.Read())
+            {
+                notificationDetails.Text = (reader["event_desc"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+
+
+            cmd = SQLServerConnection.initializeSqlCommand("select date_created from Announcement where event_id=@id");
+            param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.Value = AnnouncementData.arrLengthNext;
+            cmd.Parameters.Add(param);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                dateLabel.Content = (reader["date_created"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+
+            cmd = SQLServerConnection.initializeSqlCommand("select event_heading from Announcement where event_id=@id");
+            param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.Value = AnnouncementData.arrLengthNext;
+            cmd.Parameters.Add(param);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                notificationLabel.Content = (reader["event_heading"].ToString());
+            }
+            cmd.Parameters.Clear(); reader.Close();
+            SQLServerConnection.closeConnection();
+
+            AnnouncementData.arrLength++;
+
+        }
+
+        //Count for next page index
+       /* public static int getCountNext()
+        {
+            SqlCommand cmd = SQLServerConnection.initializeSqlCommand("select count(*) from Announcement ");
+            AnnouncementData.count = (int)cmd.ExecuteScalar();
+            cmd.Parameters.Clear();
+            return AnnouncementData.count;
+        }*/
+
+    }
 }
 

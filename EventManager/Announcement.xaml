@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:EventManager"
         mc:Ignorable="d"
         Title="Announcement Board" Height="720" Width="1280">
-    <Grid Background="#FFE6FFFF">
-        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="88,59,0,0" VerticalAlignment="Top" Width="95" Height="50" FontSize="20" FontWeight="Bold" Click="switchButton_Click"/>
-        <Button x:Name="prevButton" Margin="10,324,1189,224" Click="prevButton_Click">
-            <Path Fill="Black" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
+    <Grid Background="#FFD2CEE5">
+        <Button x:Name="switchButton" Content="Switch" HorizontalAlignment="Left" Margin="61,59,0,0" VerticalAlignment="Top" Width="95" Height="50" FontSize="24" FontWeight="Bold" Click="switchButton_Click" Background="#FFFC9090"/>
+        <Button x:Name="prevButton" Margin="0,324,1188.6,0" Click="prevButton_Click" HorizontalAlignment="Right" Width="75" Height="142" VerticalAlignment="Top">
+            <Path Fill="#FFFC9090" Data="M -2 6 L 4 12 L 4 0 Z" Stretch="Fill"/>
         </Button>
-        <Button x:Name="nextButton" Margin="1193,324,10,224" OpacityMask="Black" Click="nextButton_Click">
-            <Path Fill="Black" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill"/>
+        <Button x:Name="nextButton" Margin="1193,324,0,0" OpacityMask="Black" Click="nextButton_Click" HorizontalAlignment="Left" Width="75" Height="142" VerticalAlignment="Top">
+            <Path Fill="#FFFC9090" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Uniform"/>
         </Button>
         <Label Content="Announcement Board" HorizontalAlignment="Left" Margin="390,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="87" Width="517" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
         <Path x:Name="rightArrowButton" Fill="#FF42A8A8" Data="M 2 12 L 9 6 L 2 0 Z" Stretch="Fill" Margin="1337.387,484.902,77.251,404.081" RenderTransformOrigin="1.445,1.327" />
@@ -26,10 +26,10 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Label x:Name="notificationLabel" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="819" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
-        <Button x:Name="logoutButton" Content="Logout" HorizontalAlignment="Left" Margin="188,59,0,0" VerticalAlignment="Top" Width="95" Height="50" FontSize="20" FontWeight="Bold" Click="logoutButton_Click"/>
-        <Label x:Name="dateLabel" HorizontalAlignment="Left" Margin="912,141,0,0" VerticalAlignment="Top" Width="309" Height="66" FontSize="36"/>
-        <TextBox x:Name="notificationDetails" HorizontalAlignment="Left" Margin="121,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="384" Width="1033">
+        <Label x:Name="notificationLabel" HorizontalAlignment="Left" Margin="88,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-12.36,0.554" Height="66" Width="766" FontSize="35" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="logoutButton" Content="Logout" HorizontalAlignment="Left" Margin="161,59,0,0" VerticalAlignment="Top" Width="122" Height="50" FontSize="24" FontWeight="Bold" Click="logoutButton_Click" Background="#FFFC9090"/>
+        <Label x:Name="dateLabel" HorizontalAlignment="Left" Margin="885,141,0,0" VerticalAlignment="Top" Width="360" Height="66" FontSize="36"/>
+        <TextBox x:Name="notificationDetails" HorizontalAlignment="Left" Margin="121,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="384" Width="1033" FontSize="18" FontStyle="Italic">
             <TextBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -37,6 +37,6 @@
                 </LinearGradientBrush>
             </TextBox.Foreground>
             <!--<Run Background="#FFFFF8F8" Foreground="{x:Null}" Text=""/>-->
-            </TextBox>
+        </TextBox>
     </Grid>
 </Window>

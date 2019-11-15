@@ -27,8 +27,8 @@
                 <DropShadowEffect BlurRadius="10" Opacity="0.55" Direction="180" Color="#FF222121" ShadowDepth="3"/>
             </GroupBox.Effect>
         </GroupBox>
-        <Button x:Name="studentButton" Content="Student" HorizontalAlignment="Right" Margin="0,0,415,469" VerticalAlignment="Bottom" Width="138" Height="59" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="{x:Null}" Click="studentButton_Click"></Button>
-        <Button x:Name="teacherButton" Content="Teacher" Margin="911,0,0,469" VerticalAlignment="Bottom" Height="59" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="{x:Null}" HorizontalAlignment="Left" Width="138" Click="teacherButton_Click" Foreground="Black"/>
+        <Button x:Name="studentButton" Content="Student" HorizontalAlignment="Right" Margin="0,0,415,469" VerticalAlignment="Bottom" Width="138" Height="59" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="Black" Background="{x:Null}" Click="studentButton_Click"></Button>
+        <Button x:Name="teacherButton" Content="Teacher" Margin="911,0,0,469" VerticalAlignment="Bottom" Height="59" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" Width="138" Click="teacherButton_Click" Foreground="Black"/>
 
         <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="933,525,0,0" VerticalAlignment="Top" Width="120" Height="46" FontSize="24" FontWeight="Bold" Opacity="0.8" Grid.Column="2" BorderBrush="#FFC72D2D" Background="#FFFC9090" Click="loginButton_Click"></Button>
 

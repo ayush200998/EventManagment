@@ -98,13 +98,13 @@ namespace EventManager
 
             if (isTeacher)
             {
-                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
-                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ff0000"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ffffff"));
             }
             else
             {
-                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
-                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ff0000"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ffffff"));
             }
         }
 
@@ -115,13 +115,13 @@ namespace EventManager
 
             if (isStudent)
             {
-                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
-                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FF82B3C9"));
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ffffff"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ff0000"));
             }
             else
             {
-                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
-                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#FFA4A4A4"));
+                teacherButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ffffff"));
+                studentButton.Background = (Brush)(new BrushConverter().ConvertFrom("#ff0000"));
             }
         }
     }
